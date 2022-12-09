@@ -1,0 +1,40 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Voiture List{% endblock %}
+
+{% block body %}
+
+
+<div class="example-wrapper">
+
+    {# <h1>Le result de  {{ x}} {{ op }} {{ y }} = {{ result }} ✅</h1> #}
+<br><br>
+<br><br><br><br><br><br>
+ {# <h1>{{ controller}}</h1> #}
+ {# {% with %} #}
+ {# {% set x = 2 %}
+ {% set y = 5 %}
+ {{ x + y}} #}
+ {# {% endwith %}#}
+ {% set color = [
+     {name:"red",quantity:3},
+     {name:"yellow",quantity:5},
+     {name:"black",quantity:10},
+ ]%}
+<table border="1">
+<tr>
+<th>Color Name</th>
+<th>Color Qunatity</th>
+</tr>
+ {% for i in color|sort((i)=>i.quantity) %}
+ <tr>
+ <td>{{ i.name }}</td>
+ <td>{{ i.quantity }}</td>
+ </tr>
+ {% endfor %}
+ </table>
+
+
+   
+</div>
+{% endblock %}
